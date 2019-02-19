@@ -3072,7 +3072,7 @@ class Client(object):
         return resp == {}
 
     @doc_metadata(categories=['work'])
-    def work_generate(self, hash):
+    def work_generate(self, hash, use_peers=False):
         """
         Generates **work** for block
 
@@ -3094,6 +3094,7 @@ class Client(object):
 
         payload = {
             "hash": hash,
+            "use_peers":use_peers,
         }
 
         resp = self.call('work_generate', payload)
